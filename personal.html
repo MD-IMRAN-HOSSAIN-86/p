@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD. IMRAN HOSSAIN | Academic Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #d4af37;
+            --accent-color: #0ea5e9;
+            --text-color: #333333;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 10px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            padding: 150px 0 100px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .hero-content h2 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .personal-info {
+            margin-top: 30px;
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .info-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-item strong {
+            min-width: 150px;
+            display: inline-block;
+            color: var(--primary-color);
+        }
+
+        .education-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            position: relative;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .timeline-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-item .year {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-bg);
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 5px;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-info {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+
+        .contact-details p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-details i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            width: 25px;
+        }
+
+        .contact-form {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-logo span {
+            color: var(--secondary-color);
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            margin-right: 15px;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .privacy-note {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+        }
+
+        .privacy-note i {
+            color: #ff9800;
+            margin-right: 10px;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            background-color: #f0f0f0;
+            color: #666;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            font-weight: normal;
+        }
+
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--white);
+                box-shadow: var(--shadow);
+                padding: 20px;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero {
+                padding: 120px 0 80px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.4rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .info-item {
+                flex-direction: column;
+            }
+            
+            .info-item strong {
+                min-width: auto;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Imran<span>Hossain</span></a>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>MD. IMRAN HOSSAIN</h1>
+                <h2>Academic Professional & Educator</h2>
+                <p>A dedicated scholar with strong educational background in both Islamic and modern education, seeking opportunities to contribute to dynamic teams while further developing professional skills.</p>
+                <a href="#contact" class="btn">Connect With Me</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Profile</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>About Me</h3>
+                    <p>I am a dedicated academic professional with a strong foundation in both traditional Islamic education and modern academic disciplines. My educational journey reflects my commitment to comprehensive learning and personal development.</p>
+                    
+                    <div class="privacy-note">
+                        <i class="fas fa-shield-alt"></i>
+                        <strong>Privacy Note:</strong> This portfolio displays only professional and educational information to maintain privacy and security.
+                    </div>
+                    
+                    <h3>Career Objective</h3>
+                    <p>To work in a challenging environment with scope for future progress. I welcome opportunities to contribute as part of dynamic teams where I can make significant contributions while further developing my professional skills.</p>
+                </div>
+                
+                <div class="about-text">
+                    <div class="personal-info">
+                        <h3>Professional Information</h3>
+                        <div class="info-item">
+                            <strong>Academic Status:</strong> Master's Graduate
+                        </div>
+                        <div class="info-item">
+                            <strong>Specialization:</strong> Humanities & Islamic Studies
+                        </div>
+                        <div class="info-item">
+                            <strong>Technical Skills:</strong> Computer Office Applications
+                        </div>
+                        <div class="info-item">
+                            <strong>Location:</strong> Pabna District, Bangladesh
+                        </div>
+                        <div class="info-item">
+                            <strong>Languages:</strong> Bengali (Native), English (Fluent)
+                        </div>
+                        <div class="info-item">
+                            <strong>Availability:</strong> Open to Opportunities
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px;">Professional Experience</h3>
+                    <p><strong>Guest Teacher</strong><br>
+                    <em>Duration: August 2022 - March 2023</em><br>
+                    Provided educational instruction and mentorship to students.</p>
+                    
+                    <p><strong>Community Volunteer</strong><br>
+                    <em>ANSAR VDP Member</em><br>
+                    Contributed to community development and social welfare initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" style="background-color: #f9f9f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Academic Journey</h2>
+            </div>
+            <div class="education-timeline">
+                <div class="timeline-item">
+                    <span class="year">2022</span>
+                    <h3>Master of Arts (M.A.)</h3>
+                    <p><strong>Institution:</strong> Govt. Edward College</p>
+                    <p><strong>University:</strong> National University, Bangladesh</p>
+                    <p><strong>Session:</strong> 2021-2022</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="year">2021</span>
+                    <h3>Bachelor's Degree (Honours)</h3>
+                    <p><strong>Institution:</strong> Govt. Haji Jamaluddin College</p>
+                    <p><strong>University:</strong> National University, Bangladesh</p>
+                    <p><strong>Session:</strong> 2017-2018</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="year">2017</span>
+                    <h3>Higher Secondary Certificate (Alim)</h3>
+                    <p><strong>Institution:</strong> Sharatnagar Fazil Madrasah</p>
+                    <p><strong>Board:</strong> Madrasah Education Board</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="year">2015</span>
+                    <h3>Secondary School Certificate (Dakhil)</h3>
+                    <p><strong>Institution:</strong> Berhowlia Dakhil Madrasah</p>
+                    <p><strong>Board:</strong> Madrasah Education Board</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Competencies</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Technical Proficiency</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Computer Operating Systems</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>MS Office Suite</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 92%;"></div>
+                        </div>
+                        <p style="font-size: 0.9rem; margin-top: 5px; color: #666;">
+                            Advanced proficiency in Word, Excel, PowerPoint
+                        </p>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Digital Literacy</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 88%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Internet & Research</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Language & Communication</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Bengali (Native)</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>English (Professional)</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Academic Writing</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Teaching & Instruction</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Personal Attributes</h3>
+                    <ul style="padding-left: 20px; margin-top: 10px;">
+                        <li style="margin-bottom: 10px;"><strong>Quick Learner:</strong> Ability to master new skills rapidly</li>
+                        <li style="margin-bottom: 10px;"><strong>Adaptable:</strong> Comfortable in diverse environments</li>
+                        <li style="margin-bottom: 10px;"><strong>Dedicated:</strong> Committed to excellence in all tasks</li>
+                        <li style="margin-bottom: 10px;"><strong>Punctual:</strong> Respect for deadlines and schedules</li>
+                        <li style="margin-bottom: 10px;"><strong>Ethical:</strong> Strong moral and professional principles</li>
+                        <li><strong>Team Player:</strong> Collaborative approach to work</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="background-color: #f9f9f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Contact</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Connect Professionally</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-user-graduate"></i> <strong>Academic Profile:</strong> Master's Graduate</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Region:</strong> Pabna District, Bangladesh</p>
+                        <p><i class="fas fa-phone"></i> <strong>Contact Available:</strong> Upon Request</p>
+                        <p><i class="fas fa-envelope"></i> <strong>Email Communication:</strong> Via Contact Form</p>
+                        <p><i class="fab fa-github"></i> <strong>GitHub:</strong> 
+                            <span class="coming-soon">Profile Under Development</span>
+                        </p>
+                    </div>
+                    
+                    <div class="privacy-note" style="margin-top: 25px;">
+                        <i class="fas fa-user-shield"></i>
+                        <strong>Contact Policy:</strong> For privacy reasons, direct contact information is shared only with verified professional inquiries through the contact form.
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Professional Inquiry</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your professional email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="organization">Organization (Optional)</label>
+                            <input type="text" id="organization" class="form-control" placeholder="Your company/institution">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Inquiry Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Nature of your inquiry" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" placeholder="Please provide details of your professional inquiry" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Professional Inquiry</button>
+                    </form>
+                    <p id="formMessage" style="margin-top: 15px; display: none; color: green; font-weight: 500;"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Imran<span>Hossain</span></div>
+                    <p>An academic professional dedicated to continuous learning and meaningful contributions in educational and professional settings.</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--white); margin-bottom: 20px;">Portfolio Sections</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 10px;"><a href="#home" style="color: #ddd; text-decoration: none;">Professional Overview</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#about" style="color: #ddd; text-decoration: none;">Profile & Experience</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#education" style="color: #ddd; text-decoration: none;">Academic Journey</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#skills" style="color: #ddd; text-decoration: none;">Competencies</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#contact" style="color: #ddd; text-decoration: none;">Professional Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: var(--white); margin-bottom: 20px;">Professional Ethics</h3>
+                    <p style="color: #ddd; margin-bottom: 15px;">This portfolio maintains professional standards by protecting personal privacy while showcasing academic and professional qualifications.</p>
+                    <div class="social-links">
+                        <a href="#" title="Academic Profile"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="#" title="Professional Network"><i class="fas fa-network-wired"></i></a>
+                        <a href="#contact" title="Send Inquiry"><i class="fas fa-paper-plane"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> MD. IMRAN HOSSAIN - Academic Portfolio. All Rights Reserved.</p>
+                <p style="margin-top: 5px; font-size: 0.8rem;">Designed with privacy and professionalism in mind</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const organization = document.getElementById('organization').value;
+            const subject = document.getElementById('subject').value;
+            
+            const orgText = organization ? ` from ${organization}` : '';
+            document.getElementById('formMessage').textContent = `Thank you ${name}${orgText}! Your professional inquiry about "${subject}" has been received. I will respond to ${email} shortly.`;
+            document.getElementById('formMessage').style.display = 'block';
+            
+            document.getElementById('contactForm').reset();
+            
+            setTimeout(() => {
+                document.getElementById('formMessage').style.display = 'none';
+            }, 6000);
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
